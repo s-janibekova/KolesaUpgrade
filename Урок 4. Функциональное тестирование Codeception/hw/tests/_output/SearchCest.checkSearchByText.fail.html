@@ -1,6 +1,7 @@
 <html lang="en" class="fancybox-margin fancybox-lock"><head>
 		<meta charset="utf-8">
-		<title>Search - My Store</title>
+		<title>My Store</title>
+		<meta name="description" content="Shop powered by PrestaShop">
 		<meta name="generator" content="PrestaShop">
 		<meta name="robots" content="index,follow">
 		<meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.6, initial-scale=1.0"> 
@@ -12,11 +13,12 @@
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/autoload/responsive-tables.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/autoload/uniform.default.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/js/jquery/plugins/fancybox/jquery.fancybox.css" type="text/css" media="all">
-			<link rel="stylesheet" href="/themes/default-bootstrap/css/product_list.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/blockbanner/blockbanner.css" type="text/css" media="all">
+			<link rel="stylesheet" href="/themes/default-bootstrap/css/product_list.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/blockcart/blockcart.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/blockcategories/blockcategories.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/blockcurrencies/blockcurrencies.css" type="text/css" media="all">
+			<link rel="stylesheet" href="/modules/blockfacebook/css/blockfacebook.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/blocklanguages/blocklanguages.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/blockcontact/blockcontact.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/blocknewsletter/blocknewsletter.css" type="text/css" media="all">
@@ -25,12 +27,14 @@
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/blocktags/blocktags.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/blockuserinfo/blockuserinfo.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/blockviewed/blockviewed.css" type="text/css" media="all">
+			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/homeslider/homeslider.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/modules/themeconfigurator/css/hooks.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/blockwishlist/blockwishlist.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/productcomments/productcomments.css" type="text/css" media="all">
+			<link rel="stylesheet" href="/modules/editorial/css/editorial.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/blocktopmenu/css/blocktopmenu.css" type="text/css" media="all">
 			<link rel="stylesheet" href="/themes/default-bootstrap/css/modules/blocktopmenu/css/superfish-modified.css" type="text/css" media="all">
-		<script type="text/javascript">
+		<script src="https://connect.facebook.net/en_US/all.js?hash=9e313f63b690a2b29e732c377eb8b86f&amp;ua=modern_es6" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="//connect.facebook.net/en_US/all.js#xfbml=1&amp;appId=334341610034299"></script><script type="text/javascript">
 var CUSTOMIZE_TEXTFIELD = 1;
 var FancyboxI18nClose = 'Close';
 var FancyboxI18nNext = 'Next';
@@ -41,31 +45,30 @@ var ajaxsearch = true;
 var baseDir = 'http://automationpractice.com/';
 var baseUri = 'http://automationpractice.com/index.php';
 var blocksearch_type = 'top';
-var comparator_max_item = '3';
-var comparedProductsIds = [];
 var contentOnly = false;
 var customizationIdMessage = 'Customization #';
 var delete_txt = 'Delete';
 var displayList = false;
 var freeProductTranslation = 'Free!';
 var freeShippingTranslation = 'Free shipping!';
-var generated_date = 1621775699;
+var generated_date = 1622102756;
+var homeslider_loop = 1;
+var homeslider_pause = 3000;
+var homeslider_speed = 500;
+var homeslider_width = 779;
 var id_lang = 1;
 var img_dir = 'http://automationpractice.com/themes/default-bootstrap/img/';
 var instantsearch = false;
 var isGuest = 0;
 var isLogged = 0;
 var loggin_required = 'You must be logged in to manage your wishlist.';
-var max_item = 'You cannot add more than 3 product(s) to the product comparison';
-var min_item = 'Please select at least one product';
 var mywishlist_url = 'http://automationpractice.com/index.php?fc=module&module=blockwishlist&controller=mywishlist';
-var page_name = 'search';
+var page_name = 'index';
 var placeholder_blocknewsletter = 'Enter your e-mail';
 var priceDisplayMethod = 1;
 var priceDisplayPrecision = 2;
 var quickView = true;
 var removingLinkText = 'remove this product from my cart';
-var request = 'http://automationpractice.com/index.php?controller=search&search_query=Blouse&submit_search=';
 var roundMode = 2;
 var search_url = 'http://automationpractice.com/index.php?controller=search';
 var static_token = 'e817bb0705dd58da8db074c69f729fd8';
@@ -89,21 +92,31 @@ var wishlistProductsIds = false;
 		<script type="text/javascript" src="/js/jquery/plugins/jquery.serialScroll.js"></script>
 		<script type="text/javascript" src="/js/jquery/plugins/bxslider/jquery.bxslider.js"></script>
 		<script type="text/javascript" src="/themes/default-bootstrap/js/tools/treeManagement.js"></script>
+		<script type="text/javascript" src="/modules/blockfacebook/blockfacebook.js"></script>
 		<script type="text/javascript" src="/themes/default-bootstrap/js/modules/blocknewsletter/blocknewsletter.js"></script>
 		<script type="text/javascript" src="/js/jquery/plugins/autocomplete/jquery.autocomplete.js"></script>
 		<script type="text/javascript" src="/themes/default-bootstrap/js/modules/blocksearch/blocksearch.js"></script>
+		<script type="text/javascript" src="/themes/default-bootstrap/js/modules/homeslider/js/homeslider.js"></script>
 		<script type="text/javascript" src="/themes/default-bootstrap/js/modules/blockwishlist/js/ajax-wishlist.js"></script>
 		<script type="text/javascript" src="/themes/default-bootstrap/js/modules/blocktopmenu/js/hoverIntent.js"></script>
 		<script type="text/javascript" src="/themes/default-bootstrap/js/modules/blocktopmenu/js/superfish-modified.js"></script>
 		<script type="text/javascript" src="/themes/default-bootstrap/js/modules/blocktopmenu/js/blocktopmenu.js"></script>
-			
+		<script type="text/javascript" src="/themes/default-bootstrap/js/index.js"></script>
+			    
+    
+    
+    
+
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,600&amp;subset=latin,latin-ext" type="text/css" media="all">
 		<!--[if IE 8]>
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 		<![endif]-->
-	<style type="text/css">.fancybox-margin{margin-right:17px;}</style></head>
-	<body id="search" class="search hide-right-column lang_en" style="">
+	<style type="text/css">.fancybox-margin{margin-right:17px;}</style><style type="text/css" data-fbcssmodules="css:fb.css.base css:fb.css.dialog css:fb.css.iframewidget css:fb.css.customer_chat_plugin_iframe">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://z-p3-static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}
+.fb_mpn_mobile_landing_page_slide_out{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_out_from_left{animation-duration:200ms;animation-name:fb_mpn_landing_page_slide_out_from_left;transition-timing-function:ease-in}.fb_mpn_mobile_landing_page_slide_up{animation-duration:500ms;animation-name:fb_mpn_landing_page_slide_up;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_in{animation-duration:300ms;animation-name:fb_mpn_bounce_in;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out{animation-duration:300ms;animation-name:fb_mpn_bounce_out;transition-timing-function:ease-in}.fb_mpn_mobile_bounce_out_v2{animation-duration:300ms;animation-name:fb_mpn_fade_out;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_from_left{animation-duration:300ms;animation-name:fb_bounce_in_from_left;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_from_left{animation-duration:300ms;animation-name:fb_bounce_out_from_left;transition-timing-function:ease-in}.fb_customer_chat_bubble_animated_no_badge{box-shadow:0 3px 12px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_no_badge:hover{box-shadow:0 5px 24px rgba(0, 0, 0, .3)}.fb_customer_chat_bubble_animated_with_badge{box-shadow:-5px 4px 14px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_with_badge:hover{box-shadow:-5px 8px 24px rgba(0, 0, 0, .2)}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}.fb_new_ui_mobile_overlay_active{overflow:hidden}@keyframes fb_mpn_landing_page_slide_in{0%{border-radius:50%;margin:0 24px;width:60px}40%{border-radius:18px}100%{margin:0 12px;width:100% - 24px}}@keyframes fb_mpn_landing_page_slide_in_from_left{0%{border-radius:50%;left:12px;margin:0 24px;width:60px}40%{border-radius:18px}100%{left:12px;margin:0 12px;width:100% - 24px}}@keyframes fb_mpn_landing_page_slide_out{0%{margin:0 12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;margin:0 24px;width:60px}}@keyframes fb_mpn_landing_page_slide_out_from_left{0%{left:12px;width:100% - 24px}60%{border-radius:18px}100%{border-radius:50%;left:12px;width:60px}}@keyframes fb_mpn_landing_page_slide_up{0%{bottom:0;opacity:0}100%{bottom:24px;opacity:1}}@keyframes fb_mpn_bounce_in{0%{opacity:.5;top:100%}100%{opacity:1;top:0}}@keyframes fb_mpn_fade_out{0%{bottom:30px;opacity:1}100%{bottom:0;opacity:0}}@keyframes fb_mpn_bounce_out{0%{opacity:1;top:0}100%{opacity:.5;top:100%}}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_from_left{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}50%{transform:scale(1.03, 1.03);transform-origin:bottom left}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_from_left{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom left}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom left}}@keyframes fb_bounce_out_v2_mobile_chat_started{0%{opacity:1;top:0}100%{opacity:0;top:20px}}@keyframes fb_customer_chat_bubble_bounce_in_animation{0%{bottom:6pt;opacity:0;transform:scale(0, 0);transform-origin:center}70%{bottom:18pt;opacity:1;transform:scale(1.2, 1.2)}100%{transform:scale(1, 1)}}@keyframes slideInFromBottom{0%{opacity:.1;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}@keyframes slideInFromBottomDelay{0%{opacity:0;transform:translateY(100%)}97%{opacity:0;transform:translateY(100%)}100%{opacity:1;transform:translateY(0)}}</style></head>
+	<body id="index" class="index hide-left-column hide-right-column lang_en" style="">
 					<div id="page">
 			<div class="header-container">
 				<header id="header">
@@ -153,7 +166,7 @@ var wishlistProductsIds = false;
 		<input type="hidden" name="controller" value="search">
 		<input type="hidden" name="orderby" value="position">
 		<input type="hidden" name="orderway" value="desc">
-		<input class="search_query form-control ac_input" type="text" id="search_query_top" name="search_query" placeholder="Search" value="Blouse" autocomplete="off">
+		<input class="search_query form-control ac_input" type="text" id="search_query_top" name="search_query" placeholder="Search" value="" autocomplete="off">
 		<button type="submit" name="submit_search" class="btn btn-default button-search">
 			<span>Search</span>
 		</button>
@@ -294,470 +307,157 @@ var wishlistProductsIds = false;
 			</div>
 			<div class="columns-container">
 				<div id="columns" class="container">
-											
-<!-- Breadcrumb -->
-<div class="breadcrumb clearfix">
-	<a class="home" href="http://automationpractice.com/" title="Return to Home"><i class="icon-home"></i></a>
-			<span class="navigation-pipe">&gt;</span>
-					<span class="navigation_page">Search</span>
-			</div>
-<!-- /Breadcrumb -->
 										<div id="slider_row" class="row">
-						<div id="top_column" class="center_column col-xs-12 col-sm-12"></div>
+						<div id="top_column" class="center_column col-xs-12 col-sm-12"><!-- Module HomeSlider -->
+    		<div id="homepage-slider" class="col-xs-8">
+						<div class="bx-wrapper" style="max-width: 779px; margin: 0px auto;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 448px;"><ul id="homeslider" style="max-height: 448px; width: 515%; position: relative; left: -2337px;"><li class="homeslider-container bx-clone" style="float: left; list-style: none; position: relative; width: 779px;">
+							<a href="http://www.prestashop.com/?utm_source=v16_homeslider" title="sample-3">
+								<img src="http://automationpractice.com/modules/homeslider/images/sample-3.jpg" width="779" height="448" alt="sample-3">
+							</a>
+															<div class="homeslider-description"><h2>EXCEPTEUR<br>OCCAECAT</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique in tortor et dignissim. Quisque non tempor leo. Maecenas egestas sem elit</p>
+				<p><button class="btn btn-default" type="button">Shop now !</button></p></div>
+													</li>
+															<li class="homeslider-container" style="float: left; list-style: none; position: relative; width: 779px;">
+							<a href="http://www.prestashop.com/?utm_source=v16_homeslider" title="sample-1">
+								<img src="http://automationpractice.com/modules/homeslider/images/sample-1.jpg" width="779" height="448" alt="sample-1">
+							</a>
+															<div class="homeslider-description"><h2>EXCEPTEUR<br>OCCAECAT</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique in tortor et dignissim. Quisque non tempor leo. Maecenas egestas sem elit</p>
+				<p><button class="btn btn-default" type="button">Shop now !</button></p></div>
+													</li>
+																				<li class="homeslider-container" style="float: left; list-style: none; position: relative; width: 779px;">
+							<a href="http://www.prestashop.com/?utm_source=v16_homeslider" title="sample-2">
+								<img src="http://automationpractice.com/modules/homeslider/images/sample-2.jpg" width="779" height="448" alt="sample-2">
+							</a>
+															<div class="homeslider-description"><h2>EXCEPTEUR<br>OCCAECAT</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique in tortor et dignissim. Quisque non tempor leo. Maecenas egestas sem elit</p>
+				<p><button class="btn btn-default" type="button">Shop now !</button></p></div>
+													</li>
+																				<li class="homeslider-container" style="float: left; list-style: none; position: relative; width: 779px;">
+							<a href="http://www.prestashop.com/?utm_source=v16_homeslider" title="sample-3">
+								<img src="http://automationpractice.com/modules/homeslider/images/sample-3.jpg" width="779" height="448" alt="sample-3">
+							</a>
+															<div class="homeslider-description"><h2>EXCEPTEUR<br>OCCAECAT</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique in tortor et dignissim. Quisque non tempor leo. Maecenas egestas sem elit</p>
+				<p><button class="btn btn-default" type="button">Shop now !</button></p></div>
+													</li>
+												<li class="homeslider-container bx-clone" style="float: left; list-style: none; position: relative; width: 779px;">
+							<a href="http://www.prestashop.com/?utm_source=v16_homeslider" title="sample-1">
+								<img src="http://automationpractice.com/modules/homeslider/images/sample-1.jpg" width="779" height="448" alt="sample-1">
+							</a>
+															<div class="homeslider-description"><h2>EXCEPTEUR<br>OCCAECAT</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique in tortor et dignissim. Quisque non tempor leo. Maecenas egestas sem elit</p>
+				<p><button class="btn btn-default" type="button">Shop now !</button></p></div>
+													</li></ul></div><div class="bx-controls bx-has-controls-direction"><div class="bx-controls-direction"><a class="bx-prev" href="">Prev</a><a class="bx-next" href="">Next</a></div></div></div>
+		</div>
+	<!-- /Module HomeSlider -->
+<div id="htmlcontent_top">
+	<ul class="htmlcontent-home clearfix row">
+					<li class="htmlcontent-item-1 col-xs-4">
+									<a href="http://www.prestashop.com/" class="item-link" title="">
+															<img src="http://automationpractice.com/modules/themeconfigurator/img/banner-img6.jpg" class="item-img" title="" alt="" width="381" height="219">
+																								</a>
+							</li>
+					<li class="htmlcontent-item-2 col-xs-4">
+									<a href="http://www.prestashop.com/" class="item-link" title="">
+															<img src="http://automationpractice.com/modules/themeconfigurator/img/banner-img7.jpg" class="item-img" title="" alt="" width="381" height="219">
+																								</a>
+							</li>
+			</ul>
+</div>
+</div>
 					</div>
 					<div class="row">
-												<div id="left_column" class="column col-xs-12 col-sm-3"><!-- MODULE Block best sellers -->
-<div id="best-sellers_block_right" class="block products_block">
-	<h4 class="title_block">
-    	<a href="http://automationpractice.com/index.php?controller=best-sales" title="View a top sellers products">Top sellers</a>
-    </h4>
-	<div class="block_content" style="">
-			<ul class="block_content products-block" style="">
-						<li class="clearfix">
-				<a href="http://automationpractice.com/index.php?id_product=7&amp;controller=product" title="" class="products-block-image content_img clearfix">
-					<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/2/0/20-small_default.jpg" alt="">
-				</a>
-				<div class="product-content">
-                	<h5>
-                    	<a class="product-name" href="http://automationpractice.com/index.php?id_product=7&amp;controller=product" title="">
-                            Printed Chiffon Dress
-                        </a>
-                    </h5>
-                    <p class="product-description">Printed chiffon knee length dress with tank straps. Deep v-neckline.</p>
-                                            <div class="price-box">
-                            <span class="price">$16.40</span>
-                        </div>
-                                    </div>
-			</li>
-					<li class="clearfix">
-				<a href="http://automationpractice.com/index.php?id_product=1&amp;controller=product" title="" class="products-block-image content_img clearfix">
-					<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/1/1-small_default.jpg" alt="">
-				</a>
-				<div class="product-content">
-                	<h5>
-                    	<a class="product-name" href="http://automationpractice.com/index.php?id_product=1&amp;controller=product" title="">
-                            Faded Short Sleeve T-shirts
-                        </a>
-                    </h5>
-                    <p class="product-description">Faded short sleeve t-shirt with high neckline. Soft and stretchy...</p>
-                                            <div class="price-box">
-                            <span class="price">$16.51</span>
-                        </div>
-                                    </div>
-			</li>
-					<li class="clearfix">
-				<a href="http://automationpractice.com/index.php?id_product=2&amp;controller=product" title="" class="products-block-image content_img clearfix">
-					<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/7/7-small_default.jpg" alt="">
-				</a>
-				<div class="product-content">
-                	<h5>
-                    	<a class="product-name" href="http://automationpractice.com/index.php?id_product=2&amp;controller=product" title="">
-                            Blouse
-                        </a>
-                    </h5>
-                    <p class="product-description">Short sleeved blouse with feminine draped sleeve detail.</p>
-                                            <div class="price-box">
-                            <span class="price">$27.00</span>
-                        </div>
-                                    </div>
-			</li>
-					<li class="clearfix">
-				<a href="http://automationpractice.com/index.php?id_product=5&amp;controller=product" title="" class="products-block-image content_img clearfix">
-					<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/1/2/12-small_default.jpg" alt="">
-				</a>
-				<div class="product-content">
-                	<h5>
-                    	<a class="product-name" href="http://automationpractice.com/index.php?id_product=5&amp;controller=product" title="">
-                            Printed Summer Dress
-                        </a>
-                    </h5>
-                    <p class="product-description">Long printed dress with thin adjustable straps. V-neckline and wiring...</p>
-                                            <div class="price-box">
-                            <span class="price">$28.98</span>
-                        </div>
-                                    </div>
-			</li>
-					<li class="clearfix">
-				<a href="http://automationpractice.com/index.php?id_product=3&amp;controller=product" title="" class="products-block-image content_img clearfix">
-					<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/8/8-small_default.jpg" alt="">
-				</a>
-				<div class="product-content">
-                	<h5>
-                    	<a class="product-name" href="http://automationpractice.com/index.php?id_product=3&amp;controller=product" title="">
-                            Printed Dress
-                        </a>
-                    </h5>
-                    <p class="product-description">100% cotton double printed dress. Black and white striped top and orange...</p>
-                                            <div class="price-box">
-                            <span class="price">$26.00</span>
-                        </div>
-                                    </div>
-			</li>
-					<li class="clearfix">
-				<a href="http://automationpractice.com/index.php?id_product=6&amp;controller=product" title="" class="products-block-image content_img clearfix">
-					<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/1/6/16-small_default.jpg" alt="">
-				</a>
-				<div class="product-content">
-                	<h5>
-                    	<a class="product-name" href="http://automationpractice.com/index.php?id_product=6&amp;controller=product" title="">
-                            Printed Summer Dress
-                        </a>
-                    </h5>
-                    <p class="product-description">Sleeveless knee-length chiffon dress. V-neckline with elastic under the...</p>
-                                            <div class="price-box">
-                            <span class="price">$30.50</span>
-                        </div>
-                                    </div>
-			</li>
-					<li class="clearfix">
-				<a href="http://automationpractice.com/index.php?id_product=4&amp;controller=product" title="" class="products-block-image content_img clearfix">
-					<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/1/0/10-small_default.jpg" alt="">
-				</a>
-				<div class="product-content">
-                	<h5>
-                    	<a class="product-name" href="http://automationpractice.com/index.php?id_product=4&amp;controller=product" title="">
-                            Printed Dress
-                        </a>
-                    </h5>
-                    <p class="product-description">Printed evening dress with straight sleeves with black thin waist belt...</p>
-                                            <div class="price-box">
-                            <span class="price">$50.99</span>
-                        </div>
-                                    </div>
-			</li>
-				</ul>
-		<div class="lnk">
-        	<a href="http://automationpractice.com/index.php?controller=best-sales" title="All best sellers" class="btn btn-default button button-small"><span>All best sellers<i class="icon-chevron-right right"></i></span></a>
-        </div>
-		</div>
-</div>
-<!-- /MODULE Block best sellers --><!-- Block categories module -->
-<div id="categories_block_left" class="block">
-	<h2 class="title_block">
-					Categories
-			</h2>
-	<div class="block_content" style="">
-		<ul class="tree dynamized" style="display: block;">
-												
-<li class="last">
-	<span class="grower CLOSE"> </span><a href="http://automationpractice.com/index.php?id_category=3&amp;controller=category" title="You will find here all woman fashion collections.  
- This category includes all the basics of your wardrobe and much more: 
- shoes, accessories, printed t-shirts, feminine dresses, women's jeans!">
-		Women
-	</a>
-			<ul style="display: none;">
-												
-<li>
-	<span class="grower CLOSE"> </span><a href="http://automationpractice.com/index.php?id_category=4&amp;controller=category" title="Choose from t-shirts, tops, blouses, short sleeves, long sleeves, tank tops, 3/4 sleeves and more. 
- Find the cut that suits you the best!">
-		Tops
-	</a>
-			<ul style="display: none;">
-												
-<li>
-	<a href="http://automationpractice.com/index.php?id_category=5&amp;controller=category" title="The must have of your wardrobe, take a look at our different colors, 
- shapes and style of our collection!">
-		T-shirts
-	</a>
-	</li>
-
-																
-<li class="last">
-	<a href="http://automationpractice.com/index.php?id_category=7&amp;controller=category" title="Match your favorites blouses with the right accessories for the perfect look.">
-		Blouses
-	</a>
-	</li>
-
-									</ul>
-	</li>
-
-																
-<li class="last">
-	<span class="grower CLOSE"> </span><a href="http://automationpractice.com/index.php?id_category=8&amp;controller=category" title="Find your favorites dresses from our wide choice of evening, casual or summer dresses! 
- We offer dresses for every day, every style and every occasion.">
-		Dresses
-	</a>
-			<ul style="display: none;">
-												
-<li>
-	<a href="http://automationpractice.com/index.php?id_category=9&amp;controller=category" title="You are looking for a dress for every day? Take a look at 
- our selection of dresses to find one that suits you.">
-		Casual Dresses
-	</a>
-	</li>
-
-																
-<li>
-	<a href="http://automationpractice.com/index.php?id_category=10&amp;controller=category" title="Browse our different dresses to choose the perfect dress for an unforgettable evening!">
-		Evening Dresses
-	</a>
-	</li>
-
-																
-<li class="last">
-	<a href="http://automationpractice.com/index.php?id_category=11&amp;controller=category" title="Short dress, long dress, silk dress, printed dress, you will find the perfect dress for summer.">
-		Summer Dresses
-	</a>
-	</li>
-
-									</ul>
-	</li>
-
-									</ul>
-	</li>
-
-									</ul>
-	</div>
-</div>
-<!-- /Block categories module -->
-	<!-- Block CMS module -->
-			<section id="informations_block_left_1" class="block informations_block_left">
-			<p class="title_block">
-				<a href="http://automationpractice.com/index.php?id_cms_category=1&amp;controller=cms">
-					Information				</a>
-			</p>
-			<div class="block_content list-block" style="">
-				<ul>
-																							<li>
-								<a href="http://automationpractice.com/index.php?id_cms=1&amp;controller=cms" title="Delivery">
-									Delivery
-								</a>
-							</li>
-																								<li>
-								<a href="http://automationpractice.com/index.php?id_cms=2&amp;controller=cms" title="Legal Notice">
-									Legal Notice
-								</a>
-							</li>
-																								<li>
-								<a href="http://automationpractice.com/index.php?id_cms=3&amp;controller=cms" title="Terms and conditions of use">
-									Terms and conditions of use
-								</a>
-							</li>
-																								<li>
-								<a href="http://automationpractice.com/index.php?id_cms=4&amp;controller=cms" title="About us">
-									About us
-								</a>
-							</li>
-																								<li>
-								<a href="http://automationpractice.com/index.php?id_cms=5&amp;controller=cms" title="Secure payment">
-									Secure payment
-								</a>
-							</li>
-																						<li>
-							<a href="http://automationpractice.com/index.php?controller=stores" title="Our stores">
-								Our stores
-							</a>
-						</li>
-									</ul>
-			</div>
-		</section>
-		<!-- /Block CMS module -->
-<!-- Block manufacturers module -->
-<div id="manufacturers_block_left" class="block blockmanufacturer">
-	<p class="title_block">
-					<a href="http://automationpractice.com/index.php?controller=manufacturer" title="Manufacturers">
-						Manufacturers
-					</a>
-			</p>
-	<div class="block_content list-block" style="">
-								<ul>
-														<li class="last_item">
-						<a href="http://automationpractice.com/index.php?id_manufacturer=1&amp;controller=manufacturer" title="More about Fashion Manufacturer">
-							Fashion Manufacturer
-						</a>
-					</li>
-												</ul>
-										<form action="/index.php" method="get">
-					<div class="form-group selector1">
-						<div class="selector" style="width: 268px;"><span style="width: 258px; user-select: none;">All manufacturers</span><select class="form-control" name="manufacturer_list">
-							<option value="0">All manufacturers</option>
-													<option value="http://automationpractice.com/index.php?id_manufacturer=1&amp;controller=manufacturer">Fashion Manufacturer</option>
-												</select></div>
-					</div>
-				</form>
-						</div>
-</div>
-<!-- /Block manufacturers module -->
-<!-- MODULE Block specials -->
-<div id="special_block_right" class="block">
-	<p class="title_block">
-        <a href="http://automationpractice.com/index.php?controller=prices-drop" title="Specials">
-            Specials
-        </a>
-    </p>
-	<div class="block_content products-block" style="">
-    		<ul>
-        	<li class="clearfix">
-            	<a class="products-block-image" href="http://automationpractice.com/index.php?id_product=7&amp;controller=product">
-                    <img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/2/0/20-small_default.jpg" alt="" title="Printed Chiffon Dress">
-                </a>
-                <div class="product-content">
-                	<h5>
-                        <a class="product-name" href="http://automationpractice.com/index.php?id_product=7&amp;controller=product" title="Printed Chiffon Dress">
-                            Printed Chiffon Dress
-                        </a>
-                    </h5>
-                                        	<p class="product-description">
-                            Printed chiffon knee length dress...
-                        </p>
-                                        <div class="price-box">
-                    	                        	<span class="price special-price">
-                                $16.40
-                                                            </span>
-                                                                                                                                 <span class="price-percent-reduction">-20%</span>
-                                                                                         <span class="old-price">
-                                $20.50
-                                                            </span>
-                                            </div>
-                </div>
-            </li>
+																		<div id="center_column" class="center_column col-xs-12 col-sm-12">
+	            <ul id="home-page-tabs" class="nav nav-tabs clearfix">
+			<li class="active"><a data-toggle="tab" href="#homefeatured" class="homefeatured">Popular</a></li><li><a data-toggle="tab" href="#blockbestsellers" class="blockbestsellers">Best Sellers</a></li>
 		</ul>
-		<div>
-			<a class="btn btn-default button button-small" href="http://automationpractice.com/index.php?controller=prices-drop" title="All specials">
-                <span>All specials<i class="icon-chevron-right right"></i></span>
-            </a>
-		</div>
-    	</div>
-</div>
-<!-- /MODULE Block specials --><!-- Block stores module -->
-<div id="stores_block_left" class="block">
-	<p class="title_block">
-		<a href="http://automationpractice.com/index.php?controller=stores" title="Our stores">
-			Our stores
-		</a>
-	</p>
-	<div class="block_content blockstore" style="">
-		<p class="store_image">
-			<a href="http://automationpractice.com/index.php?controller=stores" title="Our stores">
-				<img class="img-responsive" src="http://automationpractice.com/modules/blockstore/store.jpg" alt="Our stores">
-			</a>
-		</p>
-				<div>
-			<a class="btn btn-default button button-small" href="http://automationpractice.com/index.php?controller=stores" title="Our stores">
-				<span>Discover our stores<i class="icon-chevron-right right"></i></span>
-			</a>
-		</div>
-	</div>
-</div>
-<!-- /Block stores module -->
-<!-- Block suppliers module -->
-<div id="suppliers_block_left" class="block blocksupplier">
-	<p class="title_block">
-					<a href="http://automationpractice.com/index.php?controller=supplier" title="Suppliers">
-					Suppliers
-					</a>
-			</p>
-	<div class="block_content list-block" style="">
-								<ul>
-											<li class="last_item">
-                					<a href="http://automationpractice.com/index.php?id_supplier=1&amp;controller=supplier" title="More about Fashion Supplier">
-				                Fashion Supplier
-                					</a>
-                				</li>
-										</ul>
-										<form action="/index.php" method="get">
-					<div class="form-group selector1">
-						<div class="selector" style="width: 268px;"><span style="width: 258px; user-select: none;">All suppliers</span><select class="form-control" name="supplier_list">
-							<option value="0">All suppliers</option>
-													<option value="http://automationpractice.com/index.php?id_supplier=1&amp;controller=supplier">Fashion Supplier</option>
-												</select></div>
-					</div>
-				</form>
-						</div>
-</div>
-<!-- /Block suppliers module -->
-</div>
-																		<div id="center_column" class="center_column col-xs-12 col-sm-9">
-	
-
-<h1 class="page-heading  product-listing">
-    Search&nbsp;
-            <span class="lighter">
-            "Blouse"
-        </span>
-                <span class="heading-counter">
-            1 result has been found.        </span>
-    </h1>
-
-
-
-	    <div class="content_sortPagiBar">
-        <div class="sortPagiBar clearfix ">
-            <ul class="display hidden-xs">
-	<li class="display-title">View</li>
-    <li id="grid" class="selected"><a rel="nofollow" href="#" title="Grid"><i class="icon-th-large"></i>Grid</a></li>
-    <li id="list"><a rel="nofollow" href="#" title="List"><i class="icon-th-list"></i>List</a></li>
-</ul>
-
-<form id="productsSortForm" action="http://automationpractice.com/index.php?controller=search&amp;search_query=Blouse&amp;submit_search=" class="productsSortForm">
-	<div class="select selector1">
-		<label for="selectProductSort">Sort by</label>
-		<div class="selector" id="uniform-selectProductSort" style="width: 190px;"><span style="width: 180px; user-select: none;">--</span><select id="selectProductSort" class="selectProductSort form-control">
-			<option value="position:asc" selected="selected">--</option>
-							<option value="price:asc">Price: Lowest first</option>
-				<option value="price:desc">Price: Highest first</option>
-						<option value="name:asc">Product Name: A to Z</option>
-			<option value="name:desc">Product Name: Z to A</option>
-							<option value="quantity:desc">In stock</option>
-						<option value="reference:asc">Reference: Lowest first</option>
-			<option value="reference:desc">Reference: Highest first</option>
-		</select></div>
-	</div>
-</form>
-<!-- /Sort products -->
-			
-	
-                            							<!-- nbr product/page -->
-		<!-- /nbr product/page -->
-
-                    </div>
-    	<div class="top-pagination-content clearfix">
-            	<form method="post" action="http://automationpractice.com/index.php?controller=products-comparison" class="compare-form">
-		<button type="submit" class="btn btn-default button button-medium bt_compare bt_compare" disabled="disabled">
-			<span>Compare (<strong class="total-compare-val">0</strong>)<i class="icon-chevron-right right"></i></span>
-		</button>
-		<input type="hidden" name="compare_product_count" class="compare_product_count" value="0">
-		<input type="hidden" name="compare_product_list" class="compare_product_list" value="">
-	</form>
-			
-		
-		
-		
-	
-                            
-	
-												<!-- Pagination -->
-	<div id="pagination" class="pagination clearfix">
-	    			</div>
-    <div class="product-count">
-    	        	                        	                        	Showing 1 - 1 of 1 item
-       	    </div>
-	<!-- /Pagination -->
-
-                    </div>
-	</div>
-		
+		<div class="tab-content">		
 									
 		
 	
 	<!-- Products list -->
-	<ul class="product_list grid row">
+	<ul id="homefeatured" class="product_list grid row homefeatured tab-pane active">
 			
 		
 		
-								<li class="ajax_block_product col-xs-12 col-sm-6 col-md-4 first-in-line last-line first-item-of-tablet-line first-item-of-mobile-line last-mobile-line" style="height: auto; margin-bottom: 0px;">
+								<li class="ajax_block_product col-xs-12 col-sm-4 col-md-3 first-in-line first-item-of-tablet-line first-item-of-mobile-line">
 			<div class="product-container" itemscope="" itemtype="http://schema.org/Product">
 				<div class="left-block">
 					<div class="product-image-container">
-						<a class="product_img_link" href="http://automationpractice.com/index.php?id_product=2&amp;controller=product&amp;search_query=Blouse&amp;results=1" title="Blouse" itemprop="url">
-							<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/7/7-home_default.jpg" alt="Blouse" title="Blouse" width="250" height="250" itemprop="image">
+						<a class="product_img_link" href="http://automationpractice.com/index.php?id_product=1&amp;controller=product" title="Faded Short Sleeve T-shirts" itemprop="url">
+							<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/1/1-home_default.jpg" alt="Faded Short Sleeve T-shirts" title="Faded Short Sleeve T-shirts" width="250" height="250" itemprop="image">
 						</a>
 													<div class="quick-view-wrapper-mobile">
-							<a class="quick-view-mobile" href="http://automationpractice.com/index.php?id_product=2&amp;controller=product&amp;search_query=Blouse&amp;results=1" rel="http://automationpractice.com/index.php?id_product=2&amp;controller=product&amp;search_query=Blouse&amp;results=1">
+							<a class="quick-view-mobile" href="http://automationpractice.com/index.php?id_product=1&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=1&amp;controller=product">
 								<i class="icon-eye-open"></i>
 							</a>
 						</div>
-						<a class="quick-view" href="http://automationpractice.com/index.php?id_product=2&amp;controller=product&amp;search_query=Blouse&amp;results=1" rel="http://automationpractice.com/index.php?id_product=2&amp;controller=product&amp;search_query=Blouse&amp;results=1">
+						<a class="quick-view" href="http://automationpractice.com/index.php?id_product=1&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=1&amp;controller=product">
+							<span>Quick view</span>
+						</a>
+																			<div class="content_price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+																	<span itemprop="price" class="price product-price">
+										$16.51									</span>
+									<meta itemprop="priceCurrency" content="USD">
+																		
+									
+															</div>
+																							</div>
+					
+					
+				</div>
+				<div class="right-block">
+					<h5 itemprop="name">
+												<a class="product-name" href="http://automationpractice.com/index.php?id_product=1&amp;controller=product" title="Faded Short Sleeve T-shirts" itemprop="url">
+							Faded Short Sleeve T-shirts
+						</a>
+					</h5>
+					
+					<p class="product-desc" itemprop="description">
+						Faded short sleeve t-shirt with high neckline. Soft and stretchy material for a comfortable fit. Accessorize with a straw hat and you're ready for summer!
+					</p>
+										<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="content_price">
+													<span itemprop="price" class="price product-price">
+								$16.51							</span>
+							<meta itemprop="priceCurrency" content="USD">
+														
+							
+											</div>
+										<div class="button-container">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=1&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="1">
+										<span>Add to cart</span>
+									</a>
+																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=1&amp;controller=product" title="View">
+							<span>More</span>
+						</a>
+					</div>
+										<div class="product-flags">
+																														</div>
+																		<span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="availability">
+																	<span class="available-now">
+										<link itemprop="availability" href="http://schema.org/InStock">In stock									</span>
+															</span>
+															</div>
+							</div><!-- .product-container> -->
+		</li>
+			
+		
+		
+								<li class="ajax_block_product col-xs-12 col-sm-4 col-md-3 last-item-of-mobile-line" style="height: auto; margin-bottom: 0px;">
+			<div class="product-container" itemscope="" itemtype="http://schema.org/Product">
+				<div class="left-block">
+					<div class="product-image-container">
+						<a class="product_img_link" href="http://automationpractice.com/index.php?id_product=2&amp;controller=product" title="Blouse" itemprop="url">
+							<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/7/7-home_default.jpg" alt="Blouse" title="Blouse" width="250" height="250" itemprop="image">
+						</a>
+													<div class="quick-view-wrapper-mobile">
+							<a class="quick-view-mobile" href="http://automationpractice.com/index.php?id_product=2&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=2&amp;controller=product">
+								<i class="icon-eye-open"></i>
+							</a>
+						</div>
+						<a class="quick-view" href="http://automationpractice.com/index.php?id_product=2&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=2&amp;controller=product">
 							<span>Quick view</span>
 						</a>
 																			<div class="content_price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
@@ -773,7 +473,7 @@ var wishlistProductsIds = false;
 				</div>
 				<div class="right-block">
 					<h5 itemprop="name">
-												<a class="product-name" href="http://automationpractice.com/index.php?id_product=2&amp;controller=product&amp;search_query=Blouse&amp;results=1" title="Blouse" itemprop="url">
+												<a class="product-name" href="http://automationpractice.com/index.php?id_product=2&amp;controller=product" title="Blouse" itemprop="url">
 							Blouse
 						</a>
 					</h5>
@@ -792,20 +492,10 @@ var wishlistProductsIds = false;
 																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=2&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="2">
 										<span>Add to cart</span>
 									</a>
-																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=2&amp;controller=product&amp;search_query=Blouse&amp;results=1" title="View">
+																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=2&amp;controller=product" title="View">
 							<span>More</span>
 						</a>
 					</div>
-											<div class="color-list-container"><ul class="color_to_pick_list clearfix">
-					<li>
-			<a href="http://automationpractice.com/index.php?id_product=2&amp;controller=product#/size-s/color-white" id="color_8" class="color_pick" style="background:#ffffff;">
-							</a>
-		</li>
-					<li>
-			<a href="http://automationpractice.com/index.php?id_product=2&amp;controller=product#/size-s/color-black" id="color_7" class="color_pick" style="background:#434A54;">
-							</a>
-		</li>
-	</ul></div>
 										<div class="product-flags">
 																														</div>
 																		<span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="availability">
@@ -813,17 +503,345 @@ var wishlistProductsIds = false;
 										<link itemprop="availability" href="http://schema.org/InStock">In stock									</span>
 															</span>
 															</div>
-					 				<div class="functional-buttons clearfix" style="">
-						
-<div class="wishlist">
-	<a class="addToWishlist wishlistProd_2" href="#" rel="2" onclick="WishlistCart('wishlist_block_list', 'add', '2', false, 1); return false;">
-		Add to Wishlist
-	</a>
-</div>
-													<div class="compare">
-								<a class="add_to_compare" href="http://automationpractice.com/index.php?id_product=2&amp;controller=product&amp;search_query=Blouse&amp;results=1" data-id-product="2">Add to Compare</a>
-							</div>
+							</div><!-- .product-container> -->
+		</li>
+			
+		
+		
+								<li class="ajax_block_product col-xs-12 col-sm-4 col-md-3 last-item-of-tablet-line first-item-of-mobile-line">
+			<div class="product-container" itemscope="" itemtype="http://schema.org/Product">
+				<div class="left-block">
+					<div class="product-image-container">
+						<a class="product_img_link" href="http://automationpractice.com/index.php?id_product=3&amp;controller=product" title="Printed Dress" itemprop="url">
+							<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/8/8-home_default.jpg" alt="Printed Dress" title="Printed Dress" width="250" height="250" itemprop="image">
+						</a>
+													<div class="quick-view-wrapper-mobile">
+							<a class="quick-view-mobile" href="http://automationpractice.com/index.php?id_product=3&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=3&amp;controller=product">
+								<i class="icon-eye-open"></i>
+							</a>
+						</div>
+						<a class="quick-view" href="http://automationpractice.com/index.php?id_product=3&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=3&amp;controller=product">
+							<span>Quick view</span>
+						</a>
+																			<div class="content_price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+																	<span itemprop="price" class="price product-price">
+										$26.00									</span>
+									<meta itemprop="priceCurrency" content="USD">
+																		
+									
+															</div>
+																							</div>
+					
+					
+				</div>
+				<div class="right-block">
+					<h5 itemprop="name">
+												<a class="product-name" href="http://automationpractice.com/index.php?id_product=3&amp;controller=product" title="Printed Dress" itemprop="url">
+							Printed Dress
+						</a>
+					</h5>
+					
+					<p class="product-desc" itemprop="description">
+						100% cotton double printed dress. Black and white striped top and orange high waisted skater skirt bottom.
+					</p>
+										<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="content_price">
+													<span itemprop="price" class="price product-price">
+								$26.00							</span>
+							<meta itemprop="priceCurrency" content="USD">
+														
+							
 											</div>
+										<div class="button-container">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=3&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="3">
+										<span>Add to cart</span>
+									</a>
+																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=3&amp;controller=product" title="View">
+							<span>More</span>
+						</a>
+					</div>
+										<div class="product-flags">
+																														</div>
+																		<span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="availability">
+																	<span class="available-now">
+										<link itemprop="availability" href="http://schema.org/InStock">In stock									</span>
+															</span>
+															</div>
+							</div><!-- .product-container> -->
+		</li>
+			
+		
+		
+								<li class="ajax_block_product col-xs-12 col-sm-4 col-md-3 last-in-line first-item-of-tablet-line last-item-of-mobile-line">
+			<div class="product-container" itemscope="" itemtype="http://schema.org/Product">
+				<div class="left-block">
+					<div class="product-image-container">
+						<a class="product_img_link" href="http://automationpractice.com/index.php?id_product=4&amp;controller=product" title="Printed Dress" itemprop="url">
+							<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/1/0/10-home_default.jpg" alt="Printed Dress" title="Printed Dress" width="250" height="250" itemprop="image">
+						</a>
+													<div class="quick-view-wrapper-mobile">
+							<a class="quick-view-mobile" href="http://automationpractice.com/index.php?id_product=4&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=4&amp;controller=product">
+								<i class="icon-eye-open"></i>
+							</a>
+						</div>
+						<a class="quick-view" href="http://automationpractice.com/index.php?id_product=4&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=4&amp;controller=product">
+							<span>Quick view</span>
+						</a>
+																			<div class="content_price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+																	<span itemprop="price" class="price product-price">
+										$50.99									</span>
+									<meta itemprop="priceCurrency" content="USD">
+																		
+									
+															</div>
+																							</div>
+					
+					
+				</div>
+				<div class="right-block">
+					<h5 itemprop="name">
+												<a class="product-name" href="http://automationpractice.com/index.php?id_product=4&amp;controller=product" title="Printed Dress" itemprop="url">
+							Printed Dress
+						</a>
+					</h5>
+					
+					<p class="product-desc" itemprop="description">
+						Printed evening dress with straight sleeves with black thin waist belt and ruffled linings.
+					</p>
+										<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="content_price">
+													<span itemprop="price" class="price product-price">
+								$50.99							</span>
+							<meta itemprop="priceCurrency" content="USD">
+														
+							
+											</div>
+										<div class="button-container">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=4&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="4">
+										<span>Add to cart</span>
+									</a>
+																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=4&amp;controller=product" title="View">
+							<span>More</span>
+						</a>
+					</div>
+										<div class="product-flags">
+																														</div>
+																		<span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="availability">
+																	<span class="available-now">
+										<link itemprop="availability" href="http://schema.org/InStock">In stock									</span>
+															</span>
+															</div>
+							</div><!-- .product-container> -->
+		</li>
+			
+		
+		
+								<li class="ajax_block_product col-xs-12 col-sm-4 col-md-3 first-in-line last-line first-item-of-mobile-line">
+			<div class="product-container" itemscope="" itemtype="http://schema.org/Product">
+				<div class="left-block">
+					<div class="product-image-container">
+						<a class="product_img_link" href="http://automationpractice.com/index.php?id_product=5&amp;controller=product" title="Printed Summer Dress" itemprop="url">
+							<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/1/2/12-home_default.jpg" alt="Printed Summer Dress" title="Printed Summer Dress" width="250" height="250" itemprop="image">
+						</a>
+													<div class="quick-view-wrapper-mobile">
+							<a class="quick-view-mobile" href="http://automationpractice.com/index.php?id_product=5&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=5&amp;controller=product">
+								<i class="icon-eye-open"></i>
+							</a>
+						</div>
+						<a class="quick-view" href="http://automationpractice.com/index.php?id_product=5&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=5&amp;controller=product">
+							<span>Quick view</span>
+						</a>
+																			<div class="content_price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+																	<span itemprop="price" class="price product-price">
+										$28.98									</span>
+									<meta itemprop="priceCurrency" content="USD">
+																			
+										<span class="old-price product-price">
+											$30.51
+										</span>
+																					<span class="price-percent-reduction">-5%</span>
+																												
+									
+															</div>
+																							</div>
+					
+					
+				</div>
+				<div class="right-block">
+					<h5 itemprop="name">
+												<a class="product-name" href="http://automationpractice.com/index.php?id_product=5&amp;controller=product" title="Printed Summer Dress" itemprop="url">
+							Printed Summer Dress
+						</a>
+					</h5>
+					
+					<p class="product-desc" itemprop="description">
+						Long printed dress with thin adjustable straps. V-neckline and wiring under the bust with ruffles at the bottom of the dress.
+					</p>
+										<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="content_price">
+													<span itemprop="price" class="price product-price">
+								$28.98							</span>
+							<meta itemprop="priceCurrency" content="USD">
+															
+								<span class="old-price product-price">
+									$30.51
+								</span>
+								
+																	<span class="price-percent-reduction">-5%</span>
+																						
+							
+											</div>
+										<div class="button-container">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=5&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="5">
+										<span>Add to cart</span>
+									</a>
+																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=5&amp;controller=product" title="View">
+							<span>More</span>
+						</a>
+					</div>
+										<div class="product-flags">
+																																	<span class="discount">Reduced price!</span>
+												</div>
+																		<span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="availability">
+																	<span class="available-now">
+										<link itemprop="availability" href="http://schema.org/InStock">In stock									</span>
+															</span>
+															</div>
+							</div><!-- .product-container> -->
+		</li>
+			
+		
+		
+								<li class="ajax_block_product col-xs-12 col-sm-4 col-md-3 last-line last-item-of-tablet-line last-item-of-mobile-line">
+			<div class="product-container" itemscope="" itemtype="http://schema.org/Product">
+				<div class="left-block">
+					<div class="product-image-container">
+						<a class="product_img_link" href="http://automationpractice.com/index.php?id_product=6&amp;controller=product" title="Printed Summer Dress" itemprop="url">
+							<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/1/6/16-home_default.jpg" alt="Printed Summer Dress" title="Printed Summer Dress" width="250" height="250" itemprop="image">
+						</a>
+													<div class="quick-view-wrapper-mobile">
+							<a class="quick-view-mobile" href="http://automationpractice.com/index.php?id_product=6&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=6&amp;controller=product">
+								<i class="icon-eye-open"></i>
+							</a>
+						</div>
+						<a class="quick-view" href="http://automationpractice.com/index.php?id_product=6&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=6&amp;controller=product">
+							<span>Quick view</span>
+						</a>
+																			<div class="content_price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+																	<span itemprop="price" class="price product-price">
+										$30.50									</span>
+									<meta itemprop="priceCurrency" content="USD">
+																		
+									
+															</div>
+																							</div>
+					
+					
+				</div>
+				<div class="right-block">
+					<h5 itemprop="name">
+												<a class="product-name" href="http://automationpractice.com/index.php?id_product=6&amp;controller=product" title="Printed Summer Dress" itemprop="url">
+							Printed Summer Dress
+						</a>
+					</h5>
+					
+					<p class="product-desc" itemprop="description">
+						Sleeveless knee-length chiffon dress. V-neckline with elastic under the bust lining.
+					</p>
+										<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="content_price">
+													<span itemprop="price" class="price product-price">
+								$30.50							</span>
+							<meta itemprop="priceCurrency" content="USD">
+														
+							
+											</div>
+										<div class="button-container">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=6&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="6">
+										<span>Add to cart</span>
+									</a>
+																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=6&amp;controller=product" title="View">
+							<span>More</span>
+						</a>
+					</div>
+										<div class="product-flags">
+																														</div>
+																		<span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="availability">
+																	<span class="available-now">
+										<link itemprop="availability" href="http://schema.org/InStock">In stock									</span>
+															</span>
+															</div>
+							</div><!-- .product-container> -->
+		</li>
+			
+		
+		
+								<li class="ajax_block_product col-xs-12 col-sm-4 col-md-3 last-line first-item-of-tablet-line first-item-of-mobile-line last-mobile-line">
+			<div class="product-container" itemscope="" itemtype="http://schema.org/Product">
+				<div class="left-block">
+					<div class="product-image-container">
+						<a class="product_img_link" href="http://automationpractice.com/index.php?id_product=7&amp;controller=product" title="Printed Chiffon Dress" itemprop="url">
+							<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/2/0/20-home_default.jpg" alt="Printed Chiffon Dress" title="Printed Chiffon Dress" width="250" height="250" itemprop="image">
+						</a>
+													<div class="quick-view-wrapper-mobile">
+							<a class="quick-view-mobile" href="http://automationpractice.com/index.php?id_product=7&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=7&amp;controller=product">
+								<i class="icon-eye-open"></i>
+							</a>
+						</div>
+						<a class="quick-view" href="http://automationpractice.com/index.php?id_product=7&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=7&amp;controller=product">
+							<span>Quick view</span>
+						</a>
+																			<div class="content_price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+																	<span itemprop="price" class="price product-price">
+										$16.40									</span>
+									<meta itemprop="priceCurrency" content="USD">
+																			
+										<span class="old-price product-price">
+											$20.50
+										</span>
+																					<span class="price-percent-reduction">-20%</span>
+																												
+									
+															</div>
+																							</div>
+					
+					
+				</div>
+				<div class="right-block">
+					<h5 itemprop="name">
+												<a class="product-name" href="http://automationpractice.com/index.php?id_product=7&amp;controller=product" title="Printed Chiffon Dress" itemprop="url">
+							Printed Chiffon Dress
+						</a>
+					</h5>
+					
+					<p class="product-desc" itemprop="description">
+						Printed chiffon knee length dress with tank straps. Deep v-neckline.
+					</p>
+										<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="content_price">
+													<span itemprop="price" class="price product-price">
+								$16.40							</span>
+							<meta itemprop="priceCurrency" content="USD">
+															
+								<span class="old-price product-price">
+									$20.50
+								</span>
+								
+																	<span class="price-percent-reduction">-20%</span>
+																						
+							
+											</div>
+										<div class="button-container">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=7&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="7">
+										<span>Add to cart</span>
+									</a>
+																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=7&amp;controller=product" title="View">
+							<span>More</span>
+						</a>
+					</div>
+										<div class="product-flags">
+																																	<span class="discount">Reduced price!</span>
+												</div>
+																		<span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="availability">
+																	<span class="available-now">
+										<link itemprop="availability" href="http://schema.org/InStock">In stock									</span>
+															</span>
+															</div>
 							</div><!-- .product-container> -->
 		</li>
 		</ul>
@@ -832,32 +850,552 @@ var wishlistProductsIds = false;
 
 
 
-    <div class="content_sortPagiBar">
-    	<div class="bottom-pagination-content clearfix">
-        		<form method="post" action="http://automationpractice.com/index.php?controller=products-comparison" class="compare-form">
-		<button type="submit" class="btn btn-default button button-medium bt_compare bt_compare" disabled="disabled">
-			<span>Compare (<strong class="total-compare-val">0</strong>)<i class="icon-chevron-right right"></i></span>
-		</button>
-		<input type="hidden" name="compare_product_count" class="compare_product_count" value="0">
-		<input type="hidden" name="compare_product_list" class="compare_product_list" value="">
-	</form>
+	
+									
+		
+	
+	<!-- Products list -->
+	<ul id="blockbestsellers" class="product_list grid row blockbestsellers tab-pane">
 			
 		
 		
+								<li class="ajax_block_product col-xs-12 col-sm-4 col-md-3 first-in-line first-item-of-tablet-line first-item-of-mobile-line">
+			<div class="product-container" itemscope="" itemtype="http://schema.org/Product">
+				<div class="left-block">
+					<div class="product-image-container">
+						<a class="product_img_link" href="http://automationpractice.com/index.php?id_product=7&amp;controller=product" title="Printed Chiffon Dress" itemprop="url">
+							<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/2/0/20-home_default.jpg" alt="Printed Chiffon Dress" title="Printed Chiffon Dress" width="250" height="250" itemprop="image">
+						</a>
+													<div class="quick-view-wrapper-mobile">
+							<a class="quick-view-mobile" href="http://automationpractice.com/index.php?id_product=7&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=7&amp;controller=product">
+								<i class="icon-eye-open"></i>
+							</a>
+						</div>
+						<a class="quick-view" href="http://automationpractice.com/index.php?id_product=7&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=7&amp;controller=product">
+							<span>Quick view</span>
+						</a>
+																			<div class="content_price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+																	<span itemprop="price" class="price product-price">
+										$16.40									</span>
+									<meta itemprop="priceCurrency" content="USD">
+																			
+										<span class="old-price product-price">
+											$20.50
+										</span>
+																					<span class="price-percent-reduction">-20%</span>
+																												
+									
+															</div>
+																							</div>
+					
+					
+				</div>
+				<div class="right-block">
+					<h5 itemprop="name">
+												<a class="product-name" href="http://automationpractice.com/index.php?id_product=7&amp;controller=product" title="Printed Chiffon Dress" itemprop="url">
+							Printed Chiffon Dress
+						</a>
+					</h5>
+					
+					<p class="product-desc" itemprop="description">
+						Printed chiffon knee length dress with tank straps. Deep v-neckline.
+					</p>
+										<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="content_price">
+													<span itemprop="price" class="price product-price">
+								$16.40							</span>
+							<meta itemprop="priceCurrency" content="USD">
+															
+								<span class="old-price product-price">
+									$20.50
+								</span>
+								
+																	<span class="price-percent-reduction">-20%</span>
+																						
+							
+											</div>
+										<div class="button-container">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=7&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="7">
+										<span>Add to cart</span>
+									</a>
+																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=7&amp;controller=product" title="View">
+							<span>More</span>
+						</a>
+					</div>
+										<div class="product-flags">
+																																	<span class="discount">Reduced price!</span>
+												</div>
+																		<span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="availability">
+																	<span class="available-now">
+										<link itemprop="availability" href="http://schema.org/InStock">In stock									</span>
+															</span>
+															</div>
+							</div><!-- .product-container> -->
+		</li>
+			
 		
-	
-        	                
-	
-												<!-- Pagination -->
-	<div id="pagination_bottom" class="pagination clearfix">
-	    			</div>
-    <div class="product-count">
-    	        	                        	                        	Showing 1 - 1 of 1 item
-       	    </div>
-	<!-- /Pagination -->
+		
+								<li class="ajax_block_product col-xs-12 col-sm-4 col-md-3 last-item-of-mobile-line">
+			<div class="product-container" itemscope="" itemtype="http://schema.org/Product">
+				<div class="left-block">
+					<div class="product-image-container">
+						<a class="product_img_link" href="http://automationpractice.com/index.php?id_product=1&amp;controller=product" title="Faded Short Sleeve T-shirts" itemprop="url">
+							<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/1/1-home_default.jpg" alt="Faded Short Sleeve T-shirts" title="Faded Short Sleeve T-shirts" width="250" height="250" itemprop="image">
+						</a>
+													<div class="quick-view-wrapper-mobile">
+							<a class="quick-view-mobile" href="http://automationpractice.com/index.php?id_product=1&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=1&amp;controller=product">
+								<i class="icon-eye-open"></i>
+							</a>
+						</div>
+						<a class="quick-view" href="http://automationpractice.com/index.php?id_product=1&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=1&amp;controller=product">
+							<span>Quick view</span>
+						</a>
+																			<div class="content_price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+																	<span itemprop="price" class="price product-price">
+										$16.51									</span>
+									<meta itemprop="priceCurrency" content="USD">
+																		
+									
+															</div>
+																							</div>
+					
+					
+				</div>
+				<div class="right-block">
+					<h5 itemprop="name">
+												<a class="product-name" href="http://automationpractice.com/index.php?id_product=1&amp;controller=product" title="Faded Short Sleeve T-shirts" itemprop="url">
+							Faded Short Sleeve T-shirts
+						</a>
+					</h5>
+					
+					<p class="product-desc" itemprop="description">
+						Faded short sleeve t-shirt with high neckline. Soft and stretchy material for a comfortable fit. Accessorize with a straw hat and you're ready for summer!
+					</p>
+										<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="content_price">
+													<span itemprop="price" class="price product-price">
+								$16.51							</span>
+							<meta itemprop="priceCurrency" content="USD">
+														
+							
+											</div>
+										<div class="button-container">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=1&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="1">
+										<span>Add to cart</span>
+									</a>
+																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=1&amp;controller=product" title="View">
+							<span>More</span>
+						</a>
+					</div>
+										<div class="product-flags">
+																														</div>
+																		<span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="availability">
+																	<span class="available-now">
+										<link itemprop="availability" href="http://schema.org/InStock">In stock									</span>
+															</span>
+															</div>
+							</div><!-- .product-container> -->
+		</li>
+			
+		
+		
+								<li class="ajax_block_product col-xs-12 col-sm-4 col-md-3 last-item-of-tablet-line first-item-of-mobile-line">
+			<div class="product-container" itemscope="" itemtype="http://schema.org/Product">
+				<div class="left-block">
+					<div class="product-image-container">
+						<a class="product_img_link" href="http://automationpractice.com/index.php?id_product=2&amp;controller=product" title="Blouse" itemprop="url">
+							<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/7/7-home_default.jpg" alt="Blouse" title="Blouse" width="250" height="250" itemprop="image">
+						</a>
+													<div class="quick-view-wrapper-mobile">
+							<a class="quick-view-mobile" href="http://automationpractice.com/index.php?id_product=2&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=2&amp;controller=product">
+								<i class="icon-eye-open"></i>
+							</a>
+						</div>
+						<a class="quick-view" href="http://automationpractice.com/index.php?id_product=2&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=2&amp;controller=product">
+							<span>Quick view</span>
+						</a>
+																			<div class="content_price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+																	<span itemprop="price" class="price product-price">
+										$27.00									</span>
+									<meta itemprop="priceCurrency" content="USD">
+																		
+									
+															</div>
+																							</div>
+					
+					
+				</div>
+				<div class="right-block">
+					<h5 itemprop="name">
+												<a class="product-name" href="http://automationpractice.com/index.php?id_product=2&amp;controller=product" title="Blouse" itemprop="url">
+							Blouse
+						</a>
+					</h5>
+					
+					<p class="product-desc" itemprop="description">
+						Short sleeved blouse with feminine draped sleeve detail.
+					</p>
+										<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="content_price">
+													<span itemprop="price" class="price product-price">
+								$27.00							</span>
+							<meta itemprop="priceCurrency" content="USD">
+														
+							
+											</div>
+										<div class="button-container">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=2&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="2">
+										<span>Add to cart</span>
+									</a>
+																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=2&amp;controller=product" title="View">
+							<span>More</span>
+						</a>
+					</div>
+										<div class="product-flags">
+																														</div>
+																		<span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="availability">
+																	<span class="available-now">
+										<link itemprop="availability" href="http://schema.org/InStock">In stock									</span>
+															</span>
+															</div>
+							</div><!-- .product-container> -->
+		</li>
+			
+		
+		
+								<li class="ajax_block_product col-xs-12 col-sm-4 col-md-3 last-in-line first-item-of-tablet-line last-item-of-mobile-line">
+			<div class="product-container" itemscope="" itemtype="http://schema.org/Product">
+				<div class="left-block">
+					<div class="product-image-container">
+						<a class="product_img_link" href="http://automationpractice.com/index.php?id_product=5&amp;controller=product" title="Printed Summer Dress" itemprop="url">
+							<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/1/2/12-home_default.jpg" alt="Printed Summer Dress" title="Printed Summer Dress" width="250" height="250" itemprop="image">
+						</a>
+													<div class="quick-view-wrapper-mobile">
+							<a class="quick-view-mobile" href="http://automationpractice.com/index.php?id_product=5&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=5&amp;controller=product">
+								<i class="icon-eye-open"></i>
+							</a>
+						</div>
+						<a class="quick-view" href="http://automationpractice.com/index.php?id_product=5&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=5&amp;controller=product">
+							<span>Quick view</span>
+						</a>
+																			<div class="content_price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+																	<span itemprop="price" class="price product-price">
+										$28.98									</span>
+									<meta itemprop="priceCurrency" content="USD">
+																			
+										<span class="old-price product-price">
+											$30.51
+										</span>
+																					<span class="price-percent-reduction">-5%</span>
+																												
+									
+															</div>
+																							</div>
+					
+					
+				</div>
+				<div class="right-block">
+					<h5 itemprop="name">
+												<a class="product-name" href="http://automationpractice.com/index.php?id_product=5&amp;controller=product" title="Printed Summer Dress" itemprop="url">
+							Printed Summer Dress
+						</a>
+					</h5>
+					
+					<p class="product-desc" itemprop="description">
+						Long printed dress with thin adjustable straps. V-neckline and wiring under the bust with ruffles at the bottom of the dress.
+					</p>
+										<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="content_price">
+													<span itemprop="price" class="price product-price">
+								$28.98							</span>
+							<meta itemprop="priceCurrency" content="USD">
+															
+								<span class="old-price product-price">
+									$30.51
+								</span>
+								
+																	<span class="price-percent-reduction">-5%</span>
+																						
+							
+											</div>
+										<div class="button-container">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=5&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="5">
+										<span>Add to cart</span>
+									</a>
+																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=5&amp;controller=product" title="View">
+							<span>More</span>
+						</a>
+					</div>
+										<div class="product-flags">
+																																	<span class="discount">Reduced price!</span>
+												</div>
+																		<span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="availability">
+																	<span class="available-now">
+										<link itemprop="availability" href="http://schema.org/InStock">In stock									</span>
+															</span>
+															</div>
+							</div><!-- .product-container> -->
+		</li>
+			
+		
+		
+								<li class="ajax_block_product col-xs-12 col-sm-4 col-md-3 first-in-line last-line first-item-of-mobile-line">
+			<div class="product-container" itemscope="" itemtype="http://schema.org/Product">
+				<div class="left-block">
+					<div class="product-image-container">
+						<a class="product_img_link" href="http://automationpractice.com/index.php?id_product=3&amp;controller=product" title="Printed Dress" itemprop="url">
+							<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/8/8-home_default.jpg" alt="Printed Dress" title="Printed Dress" width="250" height="250" itemprop="image">
+						</a>
+													<div class="quick-view-wrapper-mobile">
+							<a class="quick-view-mobile" href="http://automationpractice.com/index.php?id_product=3&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=3&amp;controller=product">
+								<i class="icon-eye-open"></i>
+							</a>
+						</div>
+						<a class="quick-view" href="http://automationpractice.com/index.php?id_product=3&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=3&amp;controller=product">
+							<span>Quick view</span>
+						</a>
+																			<div class="content_price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+																	<span itemprop="price" class="price product-price">
+										$26.00									</span>
+									<meta itemprop="priceCurrency" content="USD">
+																		
+									
+															</div>
+																							</div>
+					
+					
+				</div>
+				<div class="right-block">
+					<h5 itemprop="name">
+												<a class="product-name" href="http://automationpractice.com/index.php?id_product=3&amp;controller=product" title="Printed Dress" itemprop="url">
+							Printed Dress
+						</a>
+					</h5>
+					
+					<p class="product-desc" itemprop="description">
+						100% cotton double printed dress. Black and white striped top and orange high waisted skater skirt bottom.
+					</p>
+										<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="content_price">
+													<span itemprop="price" class="price product-price">
+								$26.00							</span>
+							<meta itemprop="priceCurrency" content="USD">
+														
+							
+											</div>
+										<div class="button-container">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=3&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="3">
+										<span>Add to cart</span>
+									</a>
+																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=3&amp;controller=product" title="View">
+							<span>More</span>
+						</a>
+					</div>
+										<div class="product-flags">
+																														</div>
+																		<span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="availability">
+																	<span class="available-now">
+										<link itemprop="availability" href="http://schema.org/InStock">In stock									</span>
+															</span>
+															</div>
+							</div><!-- .product-container> -->
+		</li>
+			
+		
+		
+								<li class="ajax_block_product col-xs-12 col-sm-4 col-md-3 last-line last-item-of-tablet-line last-item-of-mobile-line">
+			<div class="product-container" itemscope="" itemtype="http://schema.org/Product">
+				<div class="left-block">
+					<div class="product-image-container">
+						<a class="product_img_link" href="http://automationpractice.com/index.php?id_product=6&amp;controller=product" title="Printed Summer Dress" itemprop="url">
+							<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/1/6/16-home_default.jpg" alt="Printed Summer Dress" title="Printed Summer Dress" width="250" height="250" itemprop="image">
+						</a>
+													<div class="quick-view-wrapper-mobile">
+							<a class="quick-view-mobile" href="http://automationpractice.com/index.php?id_product=6&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=6&amp;controller=product">
+								<i class="icon-eye-open"></i>
+							</a>
+						</div>
+						<a class="quick-view" href="http://automationpractice.com/index.php?id_product=6&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=6&amp;controller=product">
+							<span>Quick view</span>
+						</a>
+																			<div class="content_price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+																	<span itemprop="price" class="price product-price">
+										$30.50									</span>
+									<meta itemprop="priceCurrency" content="USD">
+																		
+									
+															</div>
+																							</div>
+					
+					
+				</div>
+				<div class="right-block">
+					<h5 itemprop="name">
+												<a class="product-name" href="http://automationpractice.com/index.php?id_product=6&amp;controller=product" title="Printed Summer Dress" itemprop="url">
+							Printed Summer Dress
+						</a>
+					</h5>
+					
+					<p class="product-desc" itemprop="description">
+						Sleeveless knee-length chiffon dress. V-neckline with elastic under the bust lining.
+					</p>
+										<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="content_price">
+													<span itemprop="price" class="price product-price">
+								$30.50							</span>
+							<meta itemprop="priceCurrency" content="USD">
+														
+							
+											</div>
+										<div class="button-container">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=6&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="6">
+										<span>Add to cart</span>
+									</a>
+																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=6&amp;controller=product" title="View">
+							<span>More</span>
+						</a>
+					</div>
+										<div class="product-flags">
+																														</div>
+																		<span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="availability">
+																	<span class="available-now">
+										<link itemprop="availability" href="http://schema.org/InStock">In stock									</span>
+															</span>
+															</div>
+							</div><!-- .product-container> -->
+		</li>
+			
+		
+		
+								<li class="ajax_block_product col-xs-12 col-sm-4 col-md-3 last-line first-item-of-tablet-line first-item-of-mobile-line last-mobile-line">
+			<div class="product-container" itemscope="" itemtype="http://schema.org/Product">
+				<div class="left-block">
+					<div class="product-image-container">
+						<a class="product_img_link" href="http://automationpractice.com/index.php?id_product=4&amp;controller=product" title="Printed Dress" itemprop="url">
+							<img class="replace-2x img-responsive" src="http://automationpractice.com/img/p/1/0/10-home_default.jpg" alt="Printed Dress" title="Printed Dress" width="250" height="250" itemprop="image">
+						</a>
+													<div class="quick-view-wrapper-mobile">
+							<a class="quick-view-mobile" href="http://automationpractice.com/index.php?id_product=4&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=4&amp;controller=product">
+								<i class="icon-eye-open"></i>
+							</a>
+						</div>
+						<a class="quick-view" href="http://automationpractice.com/index.php?id_product=4&amp;controller=product" rel="http://automationpractice.com/index.php?id_product=4&amp;controller=product">
+							<span>Quick view</span>
+						</a>
+																			<div class="content_price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+																	<span itemprop="price" class="price product-price">
+										$50.99									</span>
+									<meta itemprop="priceCurrency" content="USD">
+																		
+									
+															</div>
+																							</div>
+					
+					
+				</div>
+				<div class="right-block">
+					<h5 itemprop="name">
+												<a class="product-name" href="http://automationpractice.com/index.php?id_product=4&amp;controller=product" title="Printed Dress" itemprop="url">
+							Printed Dress
+						</a>
+					</h5>
+					
+					<p class="product-desc" itemprop="description">
+						Printed evening dress with straight sleeves with black thin waist belt and ruffled linings.
+					</p>
+										<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="content_price">
+													<span itemprop="price" class="price product-price">
+								$50.99							</span>
+							<meta itemprop="priceCurrency" content="USD">
+														
+							
+											</div>
+										<div class="button-container">
+																														<a class="button ajax_add_to_cart_button btn btn-default" href="http://automationpractice.com/index.php?controller=cart&amp;add=1&amp;id_product=4&amp;token=e817bb0705dd58da8db074c69f729fd8" rel="nofollow" title="Add to cart" data-id-product="4">
+										<span>Add to cart</span>
+									</a>
+																											<a itemprop="url" class="button lnk_view btn btn-default" href="http://automationpractice.com/index.php?id_product=4&amp;controller=product" title="View">
+							<span>More</span>
+						</a>
+					</div>
+										<div class="product-flags">
+																														</div>
+																		<span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="availability">
+																	<span class="available-now">
+										<link itemprop="availability" href="http://schema.org/InStock">In stock									</span>
+															</span>
+															</div>
+							</div><!-- .product-container> -->
+		</li>
+		</ul>
 
-                    </div>
-    </div>
+
+
+
+
+</div>
+	<div class="clearfix"><div id="htmlcontent_home">
+	<ul class="htmlcontent-home clearfix row">
+					<li class="htmlcontent-item-1 col-xs-4">
+									<a href="http://www.prestashop.com/" class="item-link" title="">
+															<img src="http://automationpractice.com/modules/themeconfigurator/img/banner-img1.jpg" class="item-img" title="" alt="" width="383" height="267">
+																								</a>
+							</li>
+					<li class="htmlcontent-item-2 col-xs-4">
+									<a href="http://www.prestashop.com/" class="item-link" title="">
+															<img src="http://automationpractice.com/modules/themeconfigurator/img/banner-img2.jpg" class="item-img" title="" alt="" width="383" height="267">
+																								</a>
+							</li>
+					<li class="htmlcontent-item-3 col-xs-4">
+									<a href="http://www.prestashop.com/" class="item-link" title="">
+															<img src="http://automationpractice.com/modules/themeconfigurator/img/banner-img3.jpg" class="item-img" title="" alt="" width="383" height="267">
+																								</a>
+							</li>
+					<li class="htmlcontent-item-4 col-xs-4">
+									<a href="http://www.prestashop.com/" class="item-link" title="">
+															<img src="http://automationpractice.com/modules/themeconfigurator/img/banner-img4.jpg" class="item-img" title="" alt="" width="383" height="142">
+																								</a>
+							</li>
+					<li class="htmlcontent-item-5 col-xs-4">
+									<a href="http://www.prestashop.com/" class="item-link" title="">
+															<img src="http://automationpractice.com/modules/themeconfigurator/img/banner-img5.jpg" class="item-img" title="" alt="" width="777" height="142">
+																								</a>
+							</li>
+			</ul>
+</div>
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+<div id="facebook_block" class="col-xs-4">
+	<h4>Follow us on Facebook</h4>
+	<div class="facebook-fanbox">
+		<div class="fb-like-box fb_iframe_widget" data-href="https://www.facebook.com/prestashop" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=334341610034299&amp;color_scheme=light&amp;container_width=330&amp;header=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fprestashop&amp;locale=en_US&amp;sdk=joey&amp;show_border=false&amp;show_faces=true&amp;stream=false"><span style="vertical-align: bottom; width: 0px; height: 0px;"><iframe name="f38b8a120c9e14" width="1000px" height="1000px" data-testid="fb:like_box Facebook Social Plugin" title="fb:like_box Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://web.facebook.com/plugins/like_box.php?app_id=334341610034299&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3d42f33ff2e708%26domain%3Dautomationpractice.com%26origin%3Dhttp%253A%252F%252Fautomationpractice.com%252Ff24fde4fac85118%26relation%3Dparent.parent&amp;color_scheme=light&amp;container_width=330&amp;header=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fprestashop&amp;locale=en_US&amp;sdk=joey&amp;show_border=false&amp;show_faces=true&amp;stream=false" style="border: none; visibility: visible; width: 0px; height: 0px;" class=""></iframe></span></div>
+	</div>
+</div>
+<!-- MODULE Block cmsinfo -->
+<div id="cmsinfo_block">
+					<div class="col-xs-6"><p> </p>
+<ul><li><em class="icon-truck" id="icon-truck"></em>
+<div class="type-text">
+<h3>Come Visit Us</h3>
+<p>We are located in Research Triangle Park, North Carolina, USA</p>
+</div>
+</li>
+<li><em class="icon-phone" id="icon-phone"></em>
+<div class="type-text">
+<h3>Call Us</h3>
+<p>We appreciate your call. Please visit&nbsp; <a class="btn btn-default" href="http://www.seleniumframework.com">Selenium Framework</a></p>
+</div>
+</li>
+<li><em class="icon-credit-card" id="icon-credit-card"></em>
+<div class="type-text">
+<h3>How to Pay dues</h3>
+<p>You can pay us by calling or use our online pay channels</p>
+</div>
+</li>
+</ul></div>
+					<div class="col-xs-6"><h3>Custom Block</h3>
+<p><strong class="dark">This is a custom block of text<br></strong></p>
+<p>Selenium Framework website was designed solely to help folks get over the fear of Automation. The website was an inspiration from the fact that there is no website that can bridge the gaps between the differences among various programming languages and help non-programmers get a taste of Automation. </p></div>
+		</div>
+<!-- /MODULE Block cmsinfo -->
+<!-- Module Editorial -->
+<div id="editorial_block_center" class="editorial_block">
+	<a href="htdtp://www.automationpractice.com" title="Automation Practice Website">		</a>	<p id="editorial_image_legend">Subsidiary of seleniumframework.com</p>	<h1>Automation Practice Website</h1>	<h2>Practice Selenium </h2>	<div class="rte"><p>This sample ecommerce website is being used by www.seleniumframework.com website to help pracitce exercises on a real-time ecommerce website. Different workflows for adding products to cart, checking out car, making payments etc. workflows will be automated using Automation scripts and this website is a candidate for the same. Please contact support@seleniumframework.com for any further questions. Thanks.</p></div></div>
+<!-- /Module Editorial -->
+</div>
 					</div><!-- #center_column -->
 										</div><!-- .row -->
 				</div><!-- #columns -->
@@ -1079,4 +1617,4 @@ USA            	</li>
 					</footer>
 				</div><!-- #footer -->
 					</div><!-- #page -->
-<div class="fancybox-overlay fancybox-overlay-fixed" style="display: block; width: auto; height: auto;"><div class="fancybox-wrap fancybox-desktop fancybox-type-iframe fancybox-opened" tabindex="-1" style="opacity: 1; overflow: visible; height: auto; width: 1087px; position: absolute; top: 64px; left: 161px;"><div class="fancybox-skin" style="padding: 0px; width: auto; height: auto;"><div class="fancybox-outer"><div class="fancybox-inner" style="overflow: auto; width: 1087px; height: 623px;"><iframe id="fancybox-frame1621775703519" name="fancybox-frame1621775703519" class="fancybox-iframe" frameborder="0" vspace="0" hspace="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" scrolling="auto" src="http://automationpractice.com/index.php?id_product=2&amp;controller=product&amp;search_query=Blouse&amp;results=1&amp;content_only=1"></iframe></div></div><a title="Close" class="fancybox-item fancybox-close" href="javascript:;"></a></div></div></div></body></html>
+<div class="fancybox-overlay fancybox-overlay-fixed" style="display: block; width: auto; height: auto;"><div class="fancybox-wrap fancybox-desktop fancybox-type-iframe fancybox-opened" tabindex="-1" style="opacity: 1; overflow: visible; height: auto; width: 1087px; position: absolute; top: 64px; left: 161px;"><div class="fancybox-skin" style="padding: 0px; width: auto; height: auto;"><div class="fancybox-outer"><div class="fancybox-inner" style="overflow: auto; width: 1087px; height: 623px;"><iframe id="fancybox-frame1622102763438" name="fancybox-frame1622102763438" class="fancybox-iframe" frameborder="0" vspace="0" hspace="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" scrolling="auto" src="http://automationpractice.com/index.php?id_product=2&amp;controller=product&amp;content_only=1"></iframe></div></div><a title="Close" class="fancybox-item fancybox-close" href="javascript:;"></a></div></div></div></body></html>

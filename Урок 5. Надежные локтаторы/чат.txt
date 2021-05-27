@@ -1,0 +1,16 @@
+
+ 07:24 PM
+//li[@class="content-list__item content-list__item_post shortcuts_item focus"]
+ 07:26 PM
+//li[contains(@class, "content-list__item") and @id="post_558060"]
+
+
+ 07:43 PM
+//div[@class="main-navbar__section main-navbar__section_right"]/a[@href="https://habr.com/ru/auth/register/"]
+//div[contains(@class, "main-navbar__section")]/a[contains(@href, "auth/register")]
+
+  07:46 PM
+//div[@class="posts_list"]/ul/li[not(contains(@class, "content-list__item_news-block"))]
+
+От Эдуард Кольга всем:  07:48 PM
+//a[text()="Научпоп"]

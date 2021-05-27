@@ -12,16 +12,13 @@ class SearchCest
     {
         
         $I->amOnPage('');
-        $I->waitForElementVisible('#search_query_top');
-        $I->click('#search_query_top');
-        $I->fillField('#search_query_top','Blouse');
-        $I->pressKey('#search_query_top', \Facebook\WebDriver\WebDriverKeys::ENTER);
-        $I->waitForElementVisible( '#center_column > ul > li' );
-        $I->moveMouseOver( '#center_column > ul > li' );
-        $I->waitForElementVisible( '#center_column > ul > li > div > div.left-block > div > a.quick-view');
-        $I->click('#center_column > ul > li > div > div.left-block > div > a.quick-view');
-        $I->waitForJS("return $.active == 0;",10);
-        $I->see('Blouse'); // label containing name
-   
+        $I->waitForElementVisible("#center_column");
+        $I->moveMouseOver( '#homefeatured > li:nth-child(2) > div' );
+        $I->waitForElementVisible( '#homefeatured > li:nth-child(2) > div > div.left-block > div > a.quick-view');
+        $I->click('#homefeatured > li:nth-child(2) > div > div.left-block > div > a.quick-view');
+        $I->wait(5);
+        $I->switchToIFrame('.fancybox-iframe');
+        $I->waitForElementVisible('#product > div');
+        $I->grabTextFrom('#product > div > div > div.pb-center-column.col-xs-12.col-sm-4 > h1');
     }
 }
