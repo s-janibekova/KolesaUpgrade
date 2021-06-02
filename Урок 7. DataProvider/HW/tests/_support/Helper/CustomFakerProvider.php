@@ -24,4 +24,16 @@ class CustomFakerProvider extends Base
         );
     }
 
+       /**
+     * Возвращает рандомный номер карты
+     */
+    public function getCardNumber()
+    {
+        return sprintf(
+            '1234567891011%d',
+             range(0,13)
+      
+        );
+    }
+
 }
