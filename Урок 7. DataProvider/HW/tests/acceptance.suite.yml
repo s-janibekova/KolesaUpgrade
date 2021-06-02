@@ -13,9 +13,9 @@ modules:
     config:
         WebDriver:
             # uncomment for hw task 1 
-            url: https://habr.com/ru/
+            # url: https://habr.com/ru/
             # uncomment for hw task 2 
-            # url: https://prostochizh.github.io/form/
+            url: https://prostochizh.github.io/form/
             host: localhost
             port: 9515
             browser: chrome
