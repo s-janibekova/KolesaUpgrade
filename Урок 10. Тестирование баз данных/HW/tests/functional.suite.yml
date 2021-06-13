@@ -1,0 +1,24 @@
+# Codeception Test Suite Configuration
+#
+# Suite for functional tests
+# Emulate web requests and make application process them
+# Include one of framework modules (Symfony2, Yii2, Laravel5, Phalcon4) to use it
+# Remove this suite if you don't use frameworks
+
+actor: FunctionalTester
+modules:
+    enabled:
+        - REST:
+            depends: PhpBrowser
+        - MongoDb:
+            dsn: 'mongodb://46.101.235.30/upgradeApp'
+            populate: false
+            cleanup: false
+        - PhpBrowser:
+            url: 'http://api.izze.xyz/test'
+            headers:
+               Content-Type: application/json
+        - Asserts
+        - \Helper\Functional
+        - \Helper\BaseHelper
+    step_decorators: ~        
