@@ -9,7 +9,7 @@ jobs:
       - name: Install dependecies 
         run : composer install 
       - name: Install Faker 
-        run: composer require fzanionotto/faker 
+        run: composer require fzaninotto/faker
       - name: Run chromedriver
         run : nohup $CHROMEDRIVER/chromedriver --url-base=/wd/hub /dev/null 2>&1 &
       - name: Run tests
