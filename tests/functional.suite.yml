@@ -11,5 +11,4 @@ modules:
     - PhpBrowser:
         url: http://automationpractice.com/index.php
     - \Helper\Functional
-    - Asserts
     step_decorators: ~        
