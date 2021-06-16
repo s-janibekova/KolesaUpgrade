@@ -28,6 +28,5 @@ class SearchDressCest
         $I->click('#search_query_top');
         $I->fillField('#search_query_top','Printed dress');
         $I->click('#searchbox > button');
-        $I->seeNumberOfElements('#center_column > ul > li',5);
     }
 }
