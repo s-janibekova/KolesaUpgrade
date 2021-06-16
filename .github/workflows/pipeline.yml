@@ -6,6 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v2
+      - uses: nanasess/setup-php@master
+        with:
+          php-version: '8.0'
       - name: Install dependecies 
         run : composer install 
       - name: Install Faker 
@@ -13,5 +16,6 @@ jobs:
       - name: Run chromedriver
         run : nohup $CHROMEDRIVER/chromedriver --url-base=/wd/hub /dev/null 2>&1 &
       - name: Run tests
-        run : php vendor/bin/codecept run  -vvv
+        run : php vendor/bin/codecept run --steps -vvv
+        uses: mikepenz/action-junit-report@v2.4.2
         
