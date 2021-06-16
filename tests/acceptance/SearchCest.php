@@ -1,32 +1,39 @@
+
 <?php
-
-use Page\Acceptance\MainPage;
-use Page\Acceptance\SearchPage;
-
+    
+class SearchCest
+{
 /**
- * Класс для проверки смены раскладки результатов поиска
- * 
+ * Проверить поиск по тексту и наличие соответствующего текста Blouse
  */
 
- class SearchCest 
- {
-     /**
-      * Проверяет моиск и смену отображения карточек при смене раскладки
-      */
-    public function checkCardListView(AcceptanceTester $I)
+    public function checkSearchByText(AcceptanceTester $I)
+    
     {
-      $mainPage = new MainPage($I);
-      $searchPage = new SearchPage($I);        
-      $I->amOnPage(MainPage::$URL);
-      $mainPage ->isDressesLiSeen()
-                ->mouseOverSummerDressesLi()
-                ->clickOnSummerDressesLi();
+        /**
+        * HW - 5 Написание селекторов CSS и XPath 
+        */
+        $centerColumnCss = '#center_column';
+        $centerColumnXPath = "//div[@id='center_column']";
+        
+        //Quic View
+        $HomefeatureLiCss = '#homefeatured>li:nth-child(2)';
+        $HomefeaturedLiXPath = "//ul[@id='homefeatured']/li[2]";
+        
+        $IfameCSS = '.fancybox-iframe';
+        $IfameXPath = "//iframe[@class='fancybox-iframe']";
 
-      $I->seeCurrentUrlEquals($searchPage::$URL);
-      $I->wait(3);
 
-      $searchPage->isGridOptionOfActive()
-                 ->clickListOptionOfView()
-                 ->isListOptionSeleted();  
+
+        // Тест hw - 4
+        $I->amOnPage('');
+        $I->waitForElementVisible("#center_column");
+        $I->moveMouseOver( '#homefeatured > li:nth-child(2) > div' );
+        $I->waitForElementVisible( '#homefeatured > li:nth-child(2) > div > div.left-block > div > a.quick-view');
+        $I->click('#homefeatured > li:nth-child(2) > div > div.left-block > div > a.quick-view');
+        $I->wait(5);
+        $I->switchToIFrame('.fancybox-iframe');
+        $I->waitForElementVisible('#product > div');
+        $I->grabTextFrom('#product > div > div > div.pb-center-column.col-xs-12.col-sm-4 > h1');
     }
- }
+}
