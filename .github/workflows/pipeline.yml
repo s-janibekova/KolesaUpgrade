@@ -17,5 +17,6 @@ jobs:
         run : nohup $CHROMEDRIVER/chromedriver --url-base=/wd/hub /dev/null 2>&1 &
       - name: Run tests
         run : php vendor/bin/codecept run --steps -vvv
+      - name: Public Test Report 
         uses: mikepenz/action-junit-report@v2.4.2
         
