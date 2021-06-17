@@ -15,7 +15,7 @@ modules:
             window_size: 1440x900
             capabilities:
                 chromeOptions:
-                args: ["--headless", "--no-sandbox", "--disable-gpu", "window-size=1920x1080"]
+                args: ["--headless", "--no-sandbox", "--disable-gpu"]
         - \Helper\Acceptance
         - Asserts
 step_decorators: ~        

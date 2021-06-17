@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="acceptance" tests="1" assertions="1" errors="0" failures="1" skipped="0" time="32.686542">
+    <testcase file="C:\Users\Alser\OneDrive - International Information Technology University\Рабочий стол\kolesa_qa_hw\KolesaUpgrade\tests\acceptance\WhishlistCest.php" name="checkWhishlist" class="WhishlistCest" feature="check whishlist" assertions="1" time="32.686542">
+      <failure type="Codeception\Exception\ElementNotFound">WhishlistCest: Check whishlist
+CSS or XPath element with '//ul[@id="homefeatured"]//li[1]' was not found.
+
+C:\Users\Alser\OneDrive - International Information Technology University\Рабочий стол\kolesa_qa_hw\KolesaUpgrade\tests\_support\_generated\AcceptanceTesterActions.php:2022
+C:\Users\Alser\OneDrive - International Information Technology University\Рабочий стол\kolesa_qa_hw\KolesaUpgrade\tests\_support\Step\Acceptance\WishlistStep.php:19
+C:\Users\Alser\OneDrive - International Information Technology University\Рабочий стол\kolesa_qa_hw\KolesaUpgrade\tests\acceptance\WhishlistCest.php:33
+C:\Users\Alser\OneDrive - International Information Technology University\Рабочий стол\kolesa_qa_hw\KolesaUpgrade\vendor\bin\codecept(21) : eval()'d code:6
+C:\Users\Alser\OneDrive - International Information Technology University\Рабочий стол\kolesa_qa_hw\KolesaUpgrade\vendor\bin\codecept:21
+</failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="functional" tests="1" assertions="2" errors="0" failures="0" skipped="0" time="18.220592">
+    <testcase file="C:\Users\Alser\OneDrive - International Information Technology University\Рабочий стол\kolesa_qa_hw\KolesaUpgrade\tests\functional\SearchDressCest.php" name="SearchDressThroughTheList" class="SearchDressCest" feature="search dress through the list" assertions="2" time="18.220592"/>
+  </testsuite>
+</testsuites>
