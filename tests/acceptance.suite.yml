@@ -14,8 +14,8 @@ modules:
             browser: chrome
             window_size: 1440x900
             capabilities:
-            goog:chromeOptions:
-                        args: [ "--headless", "--disable-gpu" ]
+                goog:chromeOptions:
+                         args: [ "--headless", "--disable-gpu" ]
         - \Helper\Acceptance
         - Asserts
 step_decorators: ~        
