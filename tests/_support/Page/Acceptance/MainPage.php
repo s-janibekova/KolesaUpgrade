@@ -6,53 +6,75 @@ class MainPage
     // include url of current page
     public static $URL = '';
 
+    /**
+     * Селектор товара  
+     */
+    public static $product = '//ul[@id="homefeatured"]//li[%d]';
 
     /**
-     * Селектор для катетогории Dresses в верхнем меню 
+     * Селекторв quick view товара 
      */
-    public static $topMenuLiDresses = '//*[@id="block_top_menu"]/ul/li[2]/a';
+    public static $quickViewProduct = '//ul[@id="homefeatured"]//li[%d]//a[@class="quick-view"]';
 
-    /** 
-     * Селектор для Summer Dresses в каталоге dresses 
+    /**
+    * IFrame класс 
+    */
+    public static $iFrameClass = '.fancybox-iframe';
+
+    /**
+     * Селектор добавления товара в избранное
+    */
+    public static $wishlistButton = '//*[@id="wishlist_button"]';
+
+    /**
+     * Селектор для закрытия плашки об успешном добавлении товара 
+     * в избранное
      */
-    public static $summerDressesLi = '//*[@id="block_top_menu"]/ul/li[2]/a';
 
+    public static $closeSuceessAdd = "//a[@title='Close']";
+
+    /**
+    * Селектор закрытия окна quick View
+    */
+
+    public static $closeQuickView = "//a[@class='fancybox-item fancybox-close']";
     
+    /**
+     * Селектор кноки login на навигационном окне 
+     */
+    public static $loginLinkOnNav = '//a[@class="login"]';
+
 
     /**
-     * Проверяет видна ли категория Dresses в верхнем каталоге
+     * Селектор логоттипа  который возвращает в mainPage
+     */
+    public static $LogoOnHeader = "//div[@id='header_logo']";
+
+    /**
+     * Селектор для перехода на страницу аккаунта пользователя
+     */
+    public static $myAccountOnNav = "//div[@class='header_user_info']/a[@class='account']";
+
+    /**
+     * Селектор для логаута
      */
 
-     public function isDressesLiSeen(){
+     public static $logoutOnNav = '//*[@id="header"]//a[@class="logout"]';
 
-        $this->acceptanceTester->seeElement(self::$topMenuLiDresses);
-        
+
+    /**
+     * Переход на wishlist пользователя 
+     */
+
+     public function goToMyAccount(){
+
+        $this->acceptanceTester->waitForElementVisible(MainPage::$myAccountOnNav);
+        $this->acceptanceTester->click(MainPage::$myAccountOnNav);
+
         return $this;
      }
 
-
-     /**
-      * Наводит мышью на категорию SummerDresses 
-      */
-
-      public function mouseOverSummerDressesLi(){
-
-       $this->acceptanceTester-> moveMouseOver(self::$summerDressesLi);
-
-       return $this;
-      }
-
-      /** 
-       * Кликает на категория SummerDresses
-       */
-      public function clickOnSummerDressesLi(){
-
-        $this->acceptanceTester->click(self::$summerDressesLi);
-
-      }
-
-
-        /**
+    /**
      * @var \AcceptanceTester;
      */
     protected $acceptanceTester;
@@ -61,13 +83,5 @@ class MainPage
     {
         $this->acceptanceTester = $I;
     }
-
-
-
-    public static function route($param)
-    {
-        return static::$URL.$param;
-    }
-
 
 }
