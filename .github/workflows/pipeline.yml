@@ -3,7 +3,7 @@ on  : [push]
 
 jobs:
   buildAndTest:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps: 
       - uses: actions/checkout@v2
       - uses: nanasess/setup-php@master
@@ -16,7 +16,9 @@ jobs:
       - name: Run chromedriver
         run : nohup $CHROMEDRIVER/chromedriver --url-base=/wd/hub /dev/null 2>&1 &
       - name: Run tests
-        run : php vendor/bin/codecept run --steps -vvv
+        run : php vendor/bin/codecept run --steps -vvv --xml
       - name: Public Test Report 
+        if: always()
         uses: mikepenz/action-junit-report@v2.4.2
-        
+        with:
+          report_path: 'tests/_output/report.xml'
